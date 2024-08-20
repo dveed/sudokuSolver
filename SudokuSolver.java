@@ -16,4 +16,14 @@ public class SudokuSolver {
                 {0, 0, 7, 0, 4, 0, 2, 0, 3}
         };
     }
+
+    private static boolean isNumberInRow(int[][] board, int number, int row, int column) {
+        for (int i = 0; i < GRID_SIZE; i++) {
+            if (board[i][column] == number) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
