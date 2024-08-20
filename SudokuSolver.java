@@ -3,7 +3,6 @@ public class SudokuSolver {
 
     public static void main(String [] args) {
 
-        //2 dimensial array of int
         int[][] board = {
                 {7, 0, 2, 0, 5, 0, 6, 0, 0},
                 {0, 0, 0, 0, 0, 3, 0, 0, 0},
@@ -15,10 +14,35 @@ public class SudokuSolver {
                 {0, 0, 0, 2, 0, 0, 0, 0, 0},
                 {0, 0, 7, 0, 4, 0, 2, 0, 3}
         };
+
+        if (solveBoard(board)) {
+            System.out.println("Solved successfully!");
+        }
+        else {
+            System.out.println("Unsolvable board :(");
+        }
+
+        printBoard(board);
     }
 
+    private static void printBoard(int[][] board) {
+        for (int row = 0; row < GRID_SIZE; row++) {
+            for (int column = 0; column < GRID_SIZE; column++) {
+                System.out.print(board[row][column]);
+            }
+            System.out.println();
+        }
+    }
+    private static boolean isNumberInRow(int[][] board, int number, int row) {
+        for (int i = 0; i < GRID_SIZE; i++) {
+            if (board[row][i] == number) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    private static boolean isNumberInRow(int[][] board, int number, int row, int column) {
+    private static boolean isNumberinColumn(int[][] board, int number, int column) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (board[i][column] == number) {
                 return true;
@@ -67,5 +91,6 @@ public class SudokuSolver {
                 }
             }
         }
+        return true;
     }
 }
