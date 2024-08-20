@@ -1,4 +1,6 @@
 public class SudokuSolver {
+    private static final int GRID_SIZE = 9;
+
     public static void main(String [] args) {
 
         //2 dimensial array of int
