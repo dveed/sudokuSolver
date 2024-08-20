@@ -34,7 +34,7 @@ public class SudokuSolver {
             }
             for (int column = 0; column < GRID_SIZE; column++) {
                 if (column % 3 == 0 && column != 0) {
-                    System.out.println("|");
+                    System.out.print("|");
                 }
                 System.out.print(board[row][column]);
             }
